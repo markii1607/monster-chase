@@ -18,6 +18,10 @@ public class CameraFollow : MonoBehaviour
 
     void LateUpdate()
     {
+        // check if player reference is not yet destroyed
+        if (!player)
+            return;
+
         // Not allowing the camera to follow the player to show the out of bounds scene
         tempPos = transform.position;
         tempPos.x = player.position.x;
