@@ -7,7 +7,8 @@ public class MainMenuController : MonoBehaviour
 {
     public void PlayGame()
     {
-        string clickedObj = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
+        int selectedCharacter = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
+        GameManager.instance.CharIndex = selectedCharacter;
         SceneManager.LoadScene("Gameplay");
     }
 }
